@@ -2,11 +2,14 @@
 class motocicletasController extends controller {
 
 	public function index(){
-		$f = new Funcionarios();
-		$todos = $f->mostrarFuncionario();
-
-		$dados['nomes'] = $todos;
 		$dados['menssagem'] = null;
+		$f = new Funcionarios();
+		$todosNomes = $f->mostrarFuncionario();
+		$dados['nomes'] = $todosNomes;
+		$m = new motocicletas();
+		$todosMotos = $m->mostrar();
+		$dados['motos'] = $todosMotos;
+
 		
 		$this->loadTemplate('motocicletas', $dados);
 	}
@@ -16,34 +19,49 @@ class motocicletasController extends controller {
 		$m = new motocicletas();
 		$modelo = $_POST['modelo'];
 		$placa = $_POST['placa'];
-		$idfuncionario = $_POST['idfuncionario'];
+	
 		$km_x_litro = $_POST['km_x_litro'];
 
 		if(isset($modelo) && !empty($modelo)){
-			$teste = $m->Valida($idfuncionario); // verifica se o funcionario já tem cadastro em outra motocicleta				
-			if($teste == 0){ // se verdadeiro = 0: CADASTRA O FUNCIONARIO		
-				$m->Cadastrar($modelo,$placa,$idfuncionario,$km_x_litro);
+			//$teste = $m->Valida($); // verifica se o funcionario já tem cadastro em outra motocicleta				
+			//if($teste == 0){ // se verdadeiro = 0: CADASTRA O FUNCIONARIO		
+				$m->Cadastrar($modelo,$placa,$km_x_litro);
 				$dados['menssagem'] = 'Cadastro efetuado com Sucesso!';
-				$this->loadTemplate('home', $dados);
+				$this->loadView('home', $dados);
+				header("location: ".BASE_URL.'motocicletas');
 			}
+		}
+	}
+	
 
-			else{
-				$dados['menssagem'] = 'O funcionario '. $idfuncionario .' já tem moto cadastrada.';
-				$this->loadTemplate('home', $dados);
-			}
-		}
-		else
-		{
-			$dados['menssagem'] = 'Por favor complete todos os campos.';
-			$this->loadTemplate('home', $dados);
-		}
+// 			else{
+// 				echo "Alerta()";
+// 				$dados['menssagem'] = 'O funcionario '. $idfuncionario .' já tem moto cadastrada.';
+// 				$this->loadTemplate('home', $dados);
+// 			}
+// 		}
+// 		else
+// 		{
+// 			echo "<script> Alerta('Por favor complete todos os campos'); </script>";	
+// 			$dados['menssagem'] = 'Por favor complete todos os campos.';
+// 			$this->loadTemplate('home', $dados);
+// 			//header("location: ".BASE_URL.'motocicletas');
+
+
+// 		}
 
 
 
 		
-	}
+// 	}
 
 
-}
+// }
 
 ?>
+
+<script type="text/javascript">
+	function Alerta($msg){
+		alert($msg);
+	}
+</script>

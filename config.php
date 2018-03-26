@@ -3,17 +3,18 @@ require 'enviroment.php';
 $config = array();
 if (ENVIROMENT == 'development') {
 	define("BASE_URL", "http://localhost/CONTROLE_KM/");
-	$config['dbname'] = 'controle_km';
+	$config['dbname'] = 'controlekm';
 	$config['host'] = 'localhost';
 	$config['dbuser'] = 'root';
 	$config['dbpass'] = '';
 }
 else
 {
-	$config['dbname'] = 'controle_km';
+	define("BASE_URL", "https://177.157.161.175/CONTROLE_KM/");
+	$config['dbname'] = 'controlekm';
 	$config['host'] = 'localhost';
 	$config['dbuser'] = 'root';
-	$config['dbpass'] = 'root';
+	$config['dbpass'] = '';
 }
 global $db;
 try {
