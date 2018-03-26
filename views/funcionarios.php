@@ -40,16 +40,11 @@
 				<?php 
 					foreach ($motos as $moto) {
 						?> 
-						<option value="<?= $moto['id'] ?>"><?=$moto['placa']?></option>";
-				
+						<option value="<?= $moto['id'] ?>"><?= $moto['modelo']?></option>";
+					
 				 
 				<?php } ?>
 				</select>
-				<br>	
-				<label>	Modelo</label>
-
-					<input type="text" class="form-control" name="modelo" value="<?= $moto['placa']?>">
-
 
 				</div>
 
