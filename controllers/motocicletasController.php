@@ -21,11 +21,12 @@ class motocicletasController extends controller {
 		$placa = $_POST['placa'];
 	
 		$km_x_litro = $_POST['km_x_litro'];
+		$kmatual = $_POST['kmatual'];
 
 		if(isset($modelo) && !empty($modelo)){
 			//$teste = $m->Valida($); // verifica se o funcionario já tem cadastro em outra motocicleta				
 			//if($teste == 0){ // se verdadeiro = 0: CADASTRA O FUNCIONARIO		
-				$m->Cadastrar($modelo,$placa,$km_x_litro);
+				$m->Cadastrar($modelo,$placa,$km_x_litro,$kmatual);
 				$dados['menssagem'] = 'Cadastro efetuado com Sucesso!';
 				$this->loadView('home', $dados);
 				header("location: ".BASE_URL.'motocicletas');

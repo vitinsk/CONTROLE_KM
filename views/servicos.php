@@ -6,6 +6,7 @@
 <h4>Motocicleta: <?= $func['modelo']; ?></h4>
 <h4>Placa: <?= $func['placa']; ?></h4>
 <h4>Km por Litro: <?= $func['km_x_litro']; ?></h4>
+<h5>Km Atual: <?=$func['kmatual']; ?></h5>
 </div>
 
 <hr>
@@ -72,22 +73,25 @@
 				<th class="alinhamento">Km Inicial</th>
 				<th class="alinhamento">Km Final</th>
 				<th class="alinhamento">Km a Rodar</th>
+				<th class="alinhamento">Km Rodados</th>
 				<td></td>
 			</div>
 	
 
 				<tbody>
 
-
+				
 
 					<td> <a href="" data-toggle="modal" data-target="#myModal"> <img class="imagem" src="<?=BASE_URL?>/assets/images/gasolina.jpg"></a></td>
 
 					<td><input id="disabledTextInput" class="form-control" type="date" name="dia" value="<?= date("Y-m-d") ?>" disabled></td>
 
-					<td><input class="form-control" type="text" name="km-inicial"></td>
-					<td><input class="form-control" type="text" name="km-final"></td>
+					<td><input class="form-control" id="kmi" type="text" name="km-inicial"></td>
+					<td><input class="form-control" id="kmf" type="text" name="km-final"></td>
 					<td><input class="form-control" id="tes" type="text" name="km-a-rodar" disabled="" value="<?php   ?>"></td>
-					<td><button type="submit" class="btn btn-primary">Registrar</button></td>
+					<td><input class="form-control" id="kmr" type="text" name="km-rodado" disabled="" value="<?php   ?>"></td>
+					<td><button type="" class="btn btn-primary" onclick='pegarkm()'>Registrar</button></td>
+					<td><button>OI</button></td>
 				</tbody>
 			</table>
 		</div>
@@ -116,7 +120,7 @@
 						<td> <input class="form-control" type="" name="" value="<?= $servico['KmaRodar']	 ?>	" disabled> </td>
 						<td><input class="form-control" type="" name="" value="<?= $servico['Kminicial']	 ?>"> 	</td>
 						<td><input class="form-control" type="" name="" value="<?= $servico['Kmfinal']	 ?>"> 	</td>
-						<td><button type="btn btn-danger"> Alterar </button></td>
+						<td><button type="btn btn-danger" onclick="pegarkm()"> Alterar </button></td>
 						
 					
 				
@@ -124,3 +128,6 @@
 			<?php 	} ?>
 			</div>
 			</table>
+
+
+				

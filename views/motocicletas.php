@@ -46,6 +46,10 @@
 				<br>
 			<label>KM POR LITRO</label>
 			<input class="form-control" type="text" name="km_x_litro" placeholder="15km"><br>
+
+			<br>
+			<label>KM Atual</label>
+			<input class="form-control" type="text" name="kmatual" placeholder=""><br>
 			</div>
 
 	</div>

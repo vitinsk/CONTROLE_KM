@@ -10,11 +10,11 @@ if (ENVIROMENT == 'development') {
 }
 else
 {
-	define("BASE_URL", "https://177.157.161.175/CONTROLE_KM/");
-	$config['dbname'] = 'controlekm';
+	define("BASE_URL", "https://vitinsk.000webhostapp.com/CONTROLE_KM/");
+	$config['dbname'] = 'id3922837_controlekm';
 	$config['host'] = 'localhost';
-	$config['dbuser'] = 'root';
-	$config['dbpass'] = '';
+	$config['dbuser'] = 'id3922837_root';
+	$config['dbpass'] = 'vitinsk123';
 }
 global $db;
 try {

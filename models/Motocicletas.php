@@ -5,12 +5,13 @@
  */
  class Motocicletas extends model
  {
-	public function cadastrar($modelo,$placa,$km_x_litro) {
+	public function cadastrar($modelo,$placa,$km_x_litro, $kmatual) {
 
-		$sql = $this->db->prepare("INSERT INTO tblmoto SET modelo = :modelo, placa = :placa, km_x_litro = :km_x_litro");
+		$sql = $this->db->prepare("INSERT INTO tblmoto SET modelo = :modelo, placa = :placa, km_x_litro = :km_x_litro, kmatual = :kmatual");
 		$sql->bindValue(':modelo',$modelo);
 		$sql->bindValue(':placa',$placa);
 		$sql->bindValue(':km_x_litro',$km_x_litro);
+		$sql->bindValue(':kmatual', $kmatual);
 		$sql->execute();
  	}
 
