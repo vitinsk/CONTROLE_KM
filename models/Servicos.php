@@ -26,6 +26,17 @@ class Servicos extends model
 
 	}
 
+
+	public function abastecer($vale, $litros, $valor, $data, $idfuncionario){
+		$sql = $this->db->prepare("INSERT INTO tblvale SET vale = :vale, litros = :litros, valor = :valor, data = :data, idfuncionario = :idfuncionario");
+		$sql->bindValue(':vale',$vale);
+		$sql->bindValue(':litros',$litros);
+		$sql->bindValue(':valor',$valor);
+		$sql->bindValue(':data',$data);
+		$sql->bindValue(':idfuncionario',$idfuncionario);
+		$sql->execute();
+	}
+
 }
 
  ?>

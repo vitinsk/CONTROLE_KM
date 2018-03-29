@@ -22,7 +22,21 @@ class servicosController extends controller
 
 	}
 
+	public function cadastroVale(){
 
+		$vale = $_POST['vale'];
+		$litros = $_POST['litros'];
+		$valor = $_POST['valor'];
+		$data = date("d-m-Y");
+		$idfuncionario = $_POST['idfuncionario'];
+		$servicosObj = new Servicos();
+		$servicosObj->abastecer($vale,$litros,$valor,$data, $idfuncionario);
+	
+		$dados = array();
+		$this->loadView('home').
+		header("location: ".BASE_URL.'servicos&id='.$idfuncionario);
+
+	}
 
 
 }

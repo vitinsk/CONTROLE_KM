@@ -28,7 +28,7 @@
 
 		    <div class="modal-body">  
 
-			<form action="<?php BASE_URL?>servicos/vale" method="POST">
+			<form action="<?php BASE_URL?>servicos/cadastroVale" method="POST">
 					 <div class="form-group">
 					 	
 					<label for="nome">Nº VALE</label>
@@ -37,9 +37,10 @@
 					<input class="form-control" type="text" name="valor" placeholder="R$"><br>
 					<label>Total de Litros</label>
 					<input class="form-control" type="text" name="litros" placeholder="Litros"><br>
+					<input class="form-control" type="date" name="data" value="1"><br>
 					<hr>
 					<label>Funcionario</label>
-					<input class="form-control" type="text" name="funcionario" value="<?= $func['nome']?>" disabled = "">	
+					<input class="form-control" type="text" name="idfuncionario" value="" placeholder="<?= $func['nome']?>">	
 
 					</div>
 
