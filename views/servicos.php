@@ -1,3 +1,5 @@
+	
+	<?php foreach ($servicos as $servico) {}?>
 	<?php foreach ($funcionario as $func) {
 		# code...
 	} ?>
@@ -7,6 +9,7 @@
 	<h4>Placa: <?= $func['placa']; ?></h4>
 	<h4>Km por Litro: <?= $func['km_x_litro']; ?></h4>
 	<h5>Km Atual: <?=$func['kmatual']; ?></h5>
+	<h5>Km a rodar: <?=$kms['total'] + ($servico['KmaRodar'] - $servico['KmRodados'])?></h5>
 	</div>
 
 	<hr>
@@ -37,11 +40,9 @@
 					<input class="form-control" type="text" name="valor" placeholder="R$"><br>
 					<label>Total de Litros</label>
 					<input class="form-control" type="text" name="litros" placeholder="Litros"><br>
-					<input class="form-control" type="date" name="data" value="1"><br>
 					<hr>
-					<label>Funcionario</label>
-					<input class="form-control" type="text" name="idfuncionario" value="" placeholder="<?= $func['nome']?>">	
-
+					<input class="form-control" type="date" name="data" value="<?= date("Y-m-d") ?>" disabled><br>								
+					<input class="form-control" type="text" name="idfuncionario" value="<?= $func['id'] ?>" style="visibility: hidden;">	
 					</div>
 
 			</div>
@@ -62,7 +63,7 @@
 
 
 
-	<form class="descer" method="POST">
+	<form class="descer" method="POST" action="<?php BASE_URL ?>servicos/cadddd">
 	<div class="form-group">
 		<div class="container">
 			<div class="row">
@@ -87,9 +88,9 @@
 
 						<td><input class="form-control" id="kminicial" type="text" name="km-inicial"></td>
 						<td><input class="form-control" id="kmfinal" type="text" name="km-final"></td>
-						<td><input class="form-control" id="" type="text" name="km-a-rodar" disabled="" value="<?php   ?>"></td>
+						<td><input class="form-control" id="" type="text" name="km-a-rodar" disabled="" value="<?=$kms['total']?>"> </td>
 						<td><input class="form-control" id="kmrodado" type="text" name="km-rodado" disabled="" value=""></td>
-						<td><button type="" id="registrar" class="btn btn-primary">Registrar</button></td>
+						<td><button type="submit" id="registrar" class="btn btn-primary">Registrar</button></td>
 						
 					</tbody>
 				</table>
@@ -109,16 +110,22 @@
 					<th class="alinhamento">Km a Rodar</th>
 					<th class="alinhamento">Km Inicial</th>
 					<th class="alinhamento">Km Final</th>
+					<th class="alinhamento">Km Rodado </th>
 					
 					</thead>
 					<?php foreach ($servicos as $servico) {
 					
 						 ?>
 					<tbody style="text-align: center; background-color: white; font-size: 21px;">	
-							<td><input class="form-control sm" type="text" name="" value="<?= date("d/m/Y", strtotime($servico['data']))?>">	</td>
-							<td> <input class="form-control" type="" name="" value="<?= $servico['KmaRodar']	 ?>	" disabled> </td>
-							<td><input class="form-control" type="" name="" value="<?= $servico['Kminicial']	 ?>"> 	</td>
-							<td><input class="form-control" type="" name="" value="<?= $servico['Kmfinal']	 ?>"> 	</td>
+							<td><input class="form-control sm" type="text" name="data" value="<?= date("d/m/Y", strtotime($servico['data']))?>">	</td>
+
+							<td> <input class="form-control" type="" name="kmaRodar" value="<?= $servico['KmaRodar']	 ?>	" disabled> </td>
+
+							<td><input class="form-control" type="" name="Kminicial" value="<?= $servico['Kminicial']	 ?>"> 	</td>
+
+							<td><input class="form-control" type="" name="Kmfinal" value="<?= $servico['Kmfinal']	 ?>"> 	</td>
+
+							<td><input class="form-control" name="KmRodados" value="<?= $servico['KmRodados'] ?>"> </td>
 							<td><button type="btn btn-danger"  onclick="pegarkm()"> Alterar </button></td>
 							
 						
@@ -127,6 +134,8 @@
 				<?php 	} ?>
 				</div>
 				</table>
+
+			<?=var_dump($servico) ?>
 
 
 
