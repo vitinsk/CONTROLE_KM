@@ -9,7 +9,6 @@ class servicosController extends controller
 		$id = $_GET['id'];
 		$funcionarioObj = new Funcionarios();		
 		$funcionario = $funcionarioObj->GetFunc_Servico($id);
-
 		$dados['funcionario'] = $funcionario;
 		
 
@@ -18,18 +17,17 @@ class servicosController extends controller
 		$dados['servicos'] = $servicosObj->mostrarDados($id);
 
 
-
 		//conta o km a rodar
 
 		
 		
-		// //if ($servicosObj->kmaRodar($id)) {
-		// //	$dados['kms'] = $servicosObj->kmaRodar($id);
+		if ($servicosObj->kmaRodar($id)) {
+			$dados['kms'] = $servicosObj->kmaRodar($id);
 
-		// }
-		// else {
-		// 		$dados['kms'] = "Nemhum abastecimento foi realizado. Por favor abasteça a Motocicleta";
-		// 			}			
+		}
+		else {
+				$dados['kms'] = "Nemhum abastecimento foi realizado. Por favor abasteça a Motocicleta";
+					}			
 		
 		//manda dados para view
 		$this->loadTemplate('servicos',$dados);
@@ -37,30 +35,17 @@ class servicosController extends controller
 	}
 
 
-	public function cadMovimento(){
-		$idfuncionario = '15';
-		$idvale = null;
-		$Kminicial = $_POST['Kminicial'];
-		$Kmfinal = $_POST['Kmfinal'];
-		$kmaRodar = $_POST['kmaRodar'];
-		$KmRodados = $_POST['KmRodados1'];
-		$data = $_POST['data'];
+	public function cadddd(){
+		$idfuncionario = '1';//$_GET['id'];
+		$idvale = '10';//null;
+		$Kminicial = '1';//$_POST['Kminicial'];
+		$Kmfinal = '1';//$_POST['Kmfinal'];
+		$kmaRodar = '1';//$_POST['kmaRodar'];
+		$KmRodados = '1';//$_POST['KmRodados'];
+		$data = '1-1-1';//$_POST['data'];
 		$servicosObj = new Servicos();
 		$servicosObj->cadastroMovimento($idfuncionario,$idvale,$Kminicial,$Kmfinal,$kmaRodar,$KmRodados,$data);
-
 		$dados = array();
-
-		$funcionariosObj = new Funcionarios();
-		$dados = $funcionariosObj->GetFunc_Servico($idfuncionario);
-		foreach ($dados as $dado) {}
-			$idmoto = $dado['idmoto'];
-			$km = $dado['kmarodar'] - $KmRodados;
-
-		$motocicletaObj = new Motocicletas();
-		$motocicletaObj->atualizaKmarodar($idmoto,$km);
-		$motocicletaObj->atualizaKmatual($idmoto,$Kmfinal);			
-
-		
 		$this->loadView('home').
 		header("location: ".BASE_URL.'servicos&id='.$idfuncionario);
 
@@ -75,24 +60,8 @@ class servicosController extends controller
 		$idfuncionario = $_POST['idfuncionario'];
 		$servicosObj = new Servicos();
 		$servicosObj->abastecer($vale,$litros,$valor,$data, $idfuncionario);
-
-		$motocicletaObj = new Motocicletas();
+	
 		$dados = array();
-		$dados = $motocicletaObj->getKm($idfuncionario);
-
-		foreach ($dados as $dado) {
-
-		}
-	
-		
-		$km = $dado['kmarodar'] + ($dado['km_x_litro'] * $litros);
-		$idmoto = $dado['idmoto'];
-		
-		$motocicletaObj->atualizaKmarodar($idmoto,$km);
-
-
-	
-		
 		$this->loadView('home').
 		header("location: ".BASE_URL.'servicos&id='.$idfuncionario);
 
