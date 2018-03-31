@@ -18,7 +18,6 @@ class servicosController extends controller
 		$dados['servicos'] = $servicosObj->mostrarDados($id);
 
 
-<<<<<<< HEAD
 
 		//conta o km a rodar
 
@@ -32,14 +31,11 @@ class servicosController extends controller
 		// 		$dados['kms'] = "Nemhum abastecimento foi realizado. Por favor abasteça a Motocicleta";
 		// 			}			
 		
-=======
->>>>>>> parent of fc3d291... adicionado funcoes a servicos
 		//manda dados para view
 		$this->loadTemplate('servicos',$dados);
 
 	}
 
-<<<<<<< HEAD
 
 	public function cadMovimento(){
 		$idfuncionario = '15';
@@ -70,14 +66,12 @@ class servicosController extends controller
 
 	}
 
-=======
->>>>>>> parent of fc3d291... adicionado funcoes a servicos
 	public function cadastroVale(){
 
 		$vale = $_POST['vale'];
 		$litros = $_POST['litros'];
 		$valor = $_POST['valor'];
-		$data = date("d-m-Y");
+		$data = $_POST['data'];
 		$idfuncionario = $_POST['idfuncionario'];
 		$servicosObj = new Servicos();
 		$servicosObj->abastecer($vale,$litros,$valor,$data, $idfuncionario);
