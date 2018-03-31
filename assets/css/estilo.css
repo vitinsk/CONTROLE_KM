@@ -185,3 +185,27 @@ body {
   width: 45%;
 }
 
+
+
+@media screen and (max-width: 900px) {
+    .oi {
+        background-color: lightgreen;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1500px){
+  .centralizar{
+    padding-left: 185px;
+  }
+}
+.centraliza{
+    text-align: center;
+}
+span.negrito {
+        font-weight: 900;
+}
+
+ li.menu-funcionario{
+    background-color: #2e353d; color: white;
+}

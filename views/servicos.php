@@ -3,6 +3,9 @@
 	<?php foreach ($funcionario as $func) {
 		# code...
 	} ?>
+
+	<div class="centralizar">	
+		<!-- 
 	<div class="informacoes">
 	<h4 class="">Funcionario:  <?php echo $func['nome'];?></h4>
 	<h4>Motocicleta: <?= $func['modelo']; ?></h4>
@@ -10,7 +13,22 @@
 	<h4>Km por Litro: <?= $func['km_x_litro']; ?></h4>
 	<h5>Km Atual: <?=$func['kmatual']; ?></h5>
 	<h5>Km a rodar: <?=$func['kmarodar']?></h5>
-	</div>
+	</div> -->
+
+
+<div class="col-sm-5">	</div>
+
+	<div class="container col-sm-5 ">
+
+  <ul class="list-group col-sm-5 centraliza">
+    <li class="list-group-item menu-funcionario"><span class="negrito">Funcionario:</span>  <?php echo $func['nome'];?></li>
+    <li class="list-group-item"><span class="negrito"> Motocicleta: </span><?= $func['modelo']; ?></li>
+    <li class="list-group-item "><span class="negrito">Placa: </span> <?= $func['placa']; ?></li>
+    <li class="list-group-item"><span class="negrito">Km por Litro:</span> <?= $func['km_x_litro']; ?></li>
+    <li class="list-group-item "><span class="negrito">Km Atual:</span> <?=$func['kmatual']; ?></li>
+    <li class="list-group-item"><span class="negrito">Km a rodar:</span> <?=$func['kmarodar']?></li>
+  </ul>
+</div>
 
 	<hr>
 
@@ -128,7 +146,7 @@
 							<td><input class="form-control" type="" name="Kmfinal" value="<?= $servico['Kmfinal']	 ?>"> 	</td>
 
 							<td><input class="form-control" name="KmRodados" value="<?= $servico['KmRodados'] ?>"> </td>
-							<td><button type="btn btn-danger"  onclick="pegarkm()"> Alterar </button></td>
+							
 							
 						
 					
@@ -136,6 +154,12 @@
 				<?php 	} ?>
 				</div>
 				</table>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
 
 			
 
