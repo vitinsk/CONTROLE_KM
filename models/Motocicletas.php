@@ -23,10 +23,27 @@
  		}
 
 
-	public function getTotalFuncionarios(){
-		$sql = $this->db->query("SELECT COUNT(*) as c FROM tblmoto");
-		$row = $sql->fetch();
-		return $row['c'];
+	public function getKm($id){
+		$array = array();
+		$sql = $this->db->query("SELECT funcionario.idmoto, moto.km_x_litro, moto.kmatual, moto.kmarodar
+								FROM tblfuncionario as funcionario
+								INNER JOIN tblmoto as moto
+								ON funcionario.idmoto = moto.id
+								WHERE funcionario.id = $id");
+
+		$array = $sql->fetchAll();
+		return $array;
+	}
+
+	public function atualizaKmarodar($id,$km){
+		$sql = $this->db->query("UPDATE tblmoto SET kmarodar = $km WHERE id = $id");
+	
+	
+		$sql->execute();
+	}
+
+	public function atualizaKmatual($id,$km){
+		$sql = $this->db->query("UPDATE tblmoto SET kmatual = $km WHERE id = $id");
 	}
 
 

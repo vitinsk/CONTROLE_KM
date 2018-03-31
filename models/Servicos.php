@@ -6,6 +6,7 @@ class Servicos extends model
 
 
 
+
 {
 
 
@@ -38,7 +39,8 @@ class Servicos extends model
 	}
 
 	public function cadastroMovimento($idfuncionario,$idvale,$Kminicial,$Kmfinal,$kmaRodar,$KmRodados,$data){
-		$sql = $this->db->prepare("INSERT INTO tblkmrodado SET idfuncionario = :idfuncionario, idvale = :idvale, Kminicial = :Kminicial, Kmfinal = :Kmfinal,kmaRodar = :kmaRodar KmRodados = : KmRodados, data = :data");
+		$sql = $this->db->prepare("INSERT INTO tblkmrodado SET idfuncionario = :idfuncionario, idvale = :idvale, Kminicial = :Kminicial, Kmfinal = :Kmfinal,kmaRodar = :kmaRodar, KmRodados = :KmRodados, data = :data");
+		
 		$sql->bindValue(':idfuncionario',$idfuncionario);
 		$sql->bindValue(':idvale',$idvale);
 		$sql->bindValue(':Kminicial',$Kminicial);
@@ -50,24 +52,26 @@ class Servicos extends model
 
 	}
 
-	public function kmaRodar($id){
-			$array = array();
-			$sql = $this->db->query("SELECT moto.km_x_litro as km, vale.litros 
-									FROM tblfuncionario as funcionario 
-									INNER JOIN tblmoto as moto
-									ON funcionario.idmoto = moto.id
-									INNER JOIN tblvale as vale
-									ON vale.idfuncionario = funcionario.id
-									WHERE funcionario.id = $id
-									ORDER BY vale.id DESC LIMIT 1;");
 
 
-			$array = $sql->fetch();
+	// public function kmaRodar($id){
+	// 		$array = array();
+	// 		$sql = $this->db->query("SELECT moto.km_x_litro as km, vale.litros 
+	// 								FROM tblfuncionario as funcionario 
+	// 								INNER JOIN tblmoto as moto
+	// 								ON funcionario.idmoto = moto.id
+	// 								INNER JOIN tblvale as vale
+	// 								ON vale.idfuncionario = funcionario.id
+	// 								WHERE funcionario.id = $id
+	// 								ORDER BY vale.id DESC LIMIT 1;");
 
-			$calcular = $array['litros'] * $array['km'];
-			$array['total'] = $calcular;
-			return $array;
-		}
+
+	// 		$array = $sql->fetch();
+	// 		$array['litros'] *= $array['km'];
+	// 		$calcular = $array['litros'];
+	// 		$array['total'] = $calcular;
+	// 		return $array;
+	// 	}
 
 }
 

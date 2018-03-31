@@ -61,8 +61,3 @@ class motocicletasController extends controller {
 
 ?>
 
-<script type="text/javascript">
-	function Alerta($msg){
-		alert($msg);
-	}
-</script>

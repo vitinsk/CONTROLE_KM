@@ -39,7 +39,7 @@
 
 	public function GetFunc_Servico($id){
 		$array = array();
-		$sql = $this->db->query("SELECT funcionario.id, funcionario.nome, moto.modelo, moto.placa, moto.km_x_litro, moto.kmatual FROM tblfuncionario as funcionario INNER JOIN tblmoto as moto ON funcionario.idmoto = moto.id WHERE funcionario.id = $id");
+		$sql = $this->db->query("SELECT funcionario.id, funcionario.nome, moto.modelo, moto.placa, moto.km_x_litro, moto.kmatual, funcionario.idmoto, moto.kmarodar FROM tblfuncionario as funcionario INNER JOIN tblmoto as moto ON funcionario.idmoto = moto.id WHERE funcionario.id = $id");
 	
 		$array = $sql->fetchAll();
 		return $array;
