@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 	
 
+=======
+>>>>>>> parent of fc3d291... adicionado funcoes a servicos
 	<?php foreach ($funcionario as $func) {
 		# code...
 	} ?>
@@ -9,7 +12,10 @@
 	<h4>Placa: <?= $func['placa']; ?></h4>
 	<h4>Km por Litro: <?= $func['km_x_litro']; ?></h4>
 	<h5>Km Atual: <?=$func['kmatual']; ?></h5>
+<<<<<<< HEAD
 	<h5>Km a rodar: <?=$func['kmarodar']?></h5>
+=======
+>>>>>>> parent of fc3d291... adicionado funcoes a servicos
 	</div>
 
 	<hr>
@@ -40,9 +46,16 @@
 					<input class="form-control" type="text" name="valor" placeholder="R$"><br>
 					<label>Total de Litros</label>
 					<input class="form-control" type="text" name="litros" placeholder="Litros"><br>
+					<input class="form-control" type="date" name="data" value="1"><br>
 					<hr>
+<<<<<<< HEAD
 					<input class="form-control" type="date" name="data" value="<?= date("Y-m-d") ?>"><br>								
 					<input class="form-control" type="text" name="idfuncionario" value="<?= $func['id'] ?>" style="visibility: hidden;">	
+=======
+					<label>Funcionario</label>
+					<input class="form-control" type="text" name="idfuncionario" value="" placeholder="<?= $func['nome']?>">	
+
+>>>>>>> parent of fc3d291... adicionado funcoes a servicos
 					</div>
 
 			</div>
@@ -63,7 +76,11 @@
 
 
 
+<<<<<<< HEAD
 	<form class="descer" method="POST" action="<?php BASE_URL ?>servicos/cadMovimento">
+=======
+	<form class="descer" method="POST">
+>>>>>>> parent of fc3d291... adicionado funcoes a servicos
 	<div class="form-group">
 		<div class="container">
 			<div class="row">
@@ -86,11 +103,19 @@
 
 						<td><input id="disabledTextInput" class="form-control" type="date" name="data" value="<?= date("Y-m-d") ?>"></td>
 
+<<<<<<< HEAD
 						<td><input class="form-control" id="kminicial" type="text" name="Kminicial" value="<?=$func['kmatual'] ?>"></td>
 						<td><input class="form-control" id="kmfinal" type="text" name="Kmfinal"></td>
 						<td><input class="form-control" id="" type="text" name="kmaRodar"  value="<?=$func['kmarodar'] ?>"> </td>
 						<td><input class="form-control" id="kmrodado" type="text" name="KmRodados1"></td>
 						<td><button type="submit" id="registrar" class="btn btn-primary">Registrar</button></td>
+=======
+						<td><input class="form-control" id="kminicial" type="text" name="km-inicial"></td>
+						<td><input class="form-control" id="kmfinal" type="text" name="km-final"></td>
+						<td><input class="form-control" id="" type="text" name="km-a-rodar" disabled="" value="<?php   ?>"></td>
+						<td><input class="form-control" id="kmrodado" type="text" name="km-rodado" disabled="" value=""></td>
+						<td><button type="" id="registrar" class="btn btn-primary">Registrar</button></td>
+>>>>>>> parent of fc3d291... adicionado funcoes a servicos
 						
 					</tbody>
 				</table>
@@ -111,13 +136,13 @@
 					<th class="alinhamento">Km a Rodar</th>
 					<th class="alinhamento">Km Inicial</th>
 					<th class="alinhamento">Km Final</th>
-					<th class="alinhamento">Km Rodado </th>
 					
 					</thead>
 					<?php foreach ($servicos as $servico) {
 					
 						 ?>
 					<tbody style="text-align: center; background-color: white; font-size: 21px;">	
+<<<<<<< HEAD
 							<td><?=$servico['idkm'] ?></td>
 							<td><input class="form-control sm" type="text" name="data" value="<?= date("d/m/Y", strtotime($servico['data']))?>">	</td>
 
@@ -128,6 +153,12 @@
 							<td><input class="form-control" type="" name="Kmfinal" value="<?= $servico['Kmfinal']	 ?>"> 	</td>
 
 							<td><input class="form-control" name="KmRodados" value="<?= $servico['KmRodados'] ?>"> </td>
+=======
+							<td><input class="form-control sm" type="text" name="" value="<?= date("d/m/Y", strtotime($servico['data']))?>">	</td>
+							<td> <input class="form-control" type="" name="" value="<?= $servico['KmaRodar']	 ?>	" disabled> </td>
+							<td><input class="form-control" type="" name="" value="<?= $servico['Kminicial']	 ?>"> 	</td>
+							<td><input class="form-control" type="" name="" value="<?= $servico['Kmfinal']	 ?>"> 	</td>
+>>>>>>> parent of fc3d291... adicionado funcoes a servicos
 							<td><button type="btn btn-danger"  onclick="pegarkm()"> Alterar </button></td>
 							
 						
@@ -137,8 +168,11 @@
 				</div>
 				</table>
 
+<<<<<<< HEAD
 			
 
+=======
+>>>>>>> parent of fc3d291... adicionado funcoes a servicos
 
 
 	<script type="text/javascript">

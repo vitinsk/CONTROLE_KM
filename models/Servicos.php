@@ -38,6 +38,7 @@ class Servicos extends model
 		$sql->execute();
 	}
 
+<<<<<<< HEAD
 	public function cadastroMovimento($idfuncionario,$idvale,$Kminicial,$Kmfinal,$kmaRodar,$KmRodados,$data){
 		$sql = $this->db->prepare("INSERT INTO tblkmrodado SET idfuncionario = :idfuncionario, idvale = :idvale, Kminicial = :Kminicial, Kmfinal = :Kmfinal,kmaRodar = :kmaRodar, KmRodados = :KmRodados, data = :data");
 		
@@ -73,6 +74,8 @@ class Servicos extends model
 	// 		return $array;
 	// 	}
 
+=======
+>>>>>>> parent of fc3d291... adicionado funcoes a servicos
 }
 
  ?>
