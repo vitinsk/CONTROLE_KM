@@ -7,7 +7,7 @@
   background-color: #2e353d;
   position: fixed;
   top: 49px;
-  width: 180px;
+  width: 150px;
   height: 100%;
   color: #e1ffff;
 }
@@ -208,4 +208,35 @@ span.negrito {
 
  li.menu-funcionario{
     background-color: #2e353d; color: white;
+}
+
+.quadro{
+    width:376px;
+    height:300px;
+    border: 1px solid; 
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    perspective: 10deg;
+    box-shadow: 7px 7px #0000001f;
+    font-size: 12px;
+
+}
+
+@media screen and (max-width: 1500px){
+  .quadro{
+    width: 290px;
+    height:150px;
+    border: 0px solid; 
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    perspective: 10deg;
+    box-shadow: 7px 7px #0000001f;
+    font-size: 12px;
+  }
+}
+
+.tbutao{
+  font-size: 70px;
 }

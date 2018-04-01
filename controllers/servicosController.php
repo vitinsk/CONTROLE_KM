@@ -16,7 +16,40 @@ class servicosController extends controller
 		//mostra tabela com base no funcionario
 		$servicosObj = new Servicos();
 		$dados['servicos'] = $servicosObj->mostrarDados($id);
+		
+		$vale = 0;
+		$dados['vale'] = $servicosObj->getVale($vale);
+		
+/// TESTE DE AUTOMATIZAÇÕA DE VALES //
+		
 
+		//
+		// foreach ($servicos as $serv) {
+		// 	$val = $serv['idvale'];
+		// 	//echo $val."<br>";
+		// 	if ($val == null) {
+		// 		$val = 0;
+		// 	}
+
+		// 	//$dados['vale'] = $servicosObj->getVale($val);
+		// 	array_push($dados['vale'], $servicosObj->getVale($val));
+
+			
+		// 	//echo "<br>";
+		// }
+
+		// 		//echo "<br>";
+		// 		//echo "<br>";
+		// 	//var_dump($dados['vale']);
+				
+	
+		
+		// // die;
+		
+
+
+
+// FIM TESTE //
 
 
 		//conta o km a rodar
@@ -38,14 +71,18 @@ class servicosController extends controller
 
 
 	public function cadMovimento(){
-		$idfuncionario = '15';
-		$idvale = null;
+		$idfuncionario = $_GET['id'];
+		$idvale = $_POST['vale'];
 		$Kminicial = $_POST['Kminicial'];
 		$Kmfinal = $_POST['Kmfinal'];
 		$kmaRodar = $_POST['kmaRodar'];
 		$KmRodados = $_POST['KmRodados1'];
 		$data = $_POST['data'];
+		if ($idvale == 0) {
+			$idvale = null;
+		}
 		$servicosObj = new Servicos();
+
 		$servicosObj->cadastroMovimento($idfuncionario,$idvale,$Kminicial,$Kmfinal,$kmaRodar,$KmRodados,$data);
 
 		$dados = array();

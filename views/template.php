@@ -23,7 +23,7 @@
       
     </h1>
 
-  	<nav class="navbar navbar-inverse" style="background-color: #23282e; ">
+  	<nav class="navbar navbar-inverse" style="background-color: #23282e; height: 10px" >
   			<div class="container-fluid">
   				<div class="navbar-header">
   					<a href="<?php echo BASE_URL; ?>" class="navbar-brand"></a>

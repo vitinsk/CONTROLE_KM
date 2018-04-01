@@ -53,6 +53,15 @@ class Servicos extends model
 	}
 
 
+	public function getVale($vale){
+		$array = array();
+		$sql = $this->db->query("SELECT * FROM `tblvale` WHERE vale = $vale");
+		$array = $sql->fetchAll();
+		return $array;
+
+	}
+
+
 
 	// public function kmaRodar($id){
 	// 		$array = array();

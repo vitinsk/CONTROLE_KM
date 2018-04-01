@@ -1,9 +1,9 @@
 function pegarkm(){
 	
-	$("#kmr").val($("#kmf").val() - $("#kmi").val());
+	
 }
 
-
+// CALCULA O KM INICIAL E FINAL
 			$(document).ready(function(){
 			$("#kmfinal").focusout(function(){
 				var result = $("#kmfinal").val() - $("#kminicial").val();
