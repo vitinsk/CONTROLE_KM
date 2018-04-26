@@ -16,27 +16,6 @@
 
 
 
-    <h1>
-      <?php 
-    
-    ?>
-      
-    </h1>
-
-  	<nav class="navbar navbar-inverse" style="background-color: #23282e; height: 10px" >
-  			<div class="container-fluid">
-  				<div class="navbar-header">
-  					<a href="<?php echo BASE_URL; ?>" class="navbar-brand"></a>
-  				</div>
-  				<ul class="nav navbar-nav navbar-right">
-  					
-  						<li><a href="<?php echo BASE_URL; ?>funcionarios">Funcionarios</a></li>
-  						<li><a href="<?php echo BASE_URL; ?>motocicletas">Motocicletas</a></li>
-  						
-  				
-  				</ul>
-  			</div>
-  		</nav>
   	
 
 
@@ -82,7 +61,7 @@
                     <a href="#"><i class="fa fa-car fa-lg"></i> Rotas <span class="arrow"></span></a>
                   </li>
                   <ul class="sub-menu collapse" id="rotas">
-                    <li>Incluir</li>
+                    <li><a href="<?=BASE_URL;?>rotas">Incluir</a></li>
                     <li>Observar</li>
                   </ul>
 

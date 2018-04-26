@@ -17,8 +17,14 @@ class servicosController extends controller
 		$servicosObj = new Servicos();
 		$dados['servicos'] = $servicosObj->mostrarDados($id);
 		
-		$vale = 0;
+		$vale = '555';
 		$dados['vale'] = $servicosObj->getVale($vale);
+		$data = date("Y-m-d");		
+		$dados['ultimovale'] = $servicosObj->ultimoVale($id,$data);
+		
+
+
+		$this->loadTemplate('servicos',$dados);
 		
 /// TESTE DE AUTOMATIZAÇÕA DE VALES //
 		
@@ -65,7 +71,7 @@ class servicosController extends controller
 		// 			}			
 		
 		//manda dados para view
-		$this->loadTemplate('servicos',$dados);
+	
 
 	}
 
@@ -134,6 +140,8 @@ class servicosController extends controller
 		header("location: ".BASE_URL.'servicos&id='.$idfuncionario);
 
 	}
+
+
 
 
 }

@@ -1,5 +1,15 @@
+		<?php 
+
+		if($ultimovale == null){
+			$ultimovales['vale'] = null;
+		} 
+			else{
+				foreach ($ultimovale as $ultimovales) {}
+			}
+
+		?>
 		
-			<!-- RECEBE INFORMACOES DE FUNCIONARIO -->
+			
 		<?php foreach ($funcionario as $func) {} ?>
 
 		<div class="centralizar">
@@ -68,7 +78,7 @@
 
 	<!--INICIO CADASTRO DE MOVIMENTO DE KM -->
 
-		<form class="descer" method="POST" action="<?php BASE_URL ?>servicos/cadMovimento&id=<?=$func['id']?>">
+		<form id="cadastro-km" class="descer" method="POST" action="<?php BASE_URL ?>servicos/cadMovimento&id=<?=$func['id']?>">
 		<div class="form-group">
 			<div class="container">
 				<div class="row">
@@ -90,7 +100,7 @@
 
 							<td> <a href="" data-toggle="modal" data-target="#myModal"> <img style ="margin-left: 25px;" class="imagem" src="<?=BASE_URL?>/assets/images/gasolina.jpg"></a></td>
 
-							<td><input type="text" name="vale" class="form-control" style="width: 60px"></td>
+							<td><input type="text" id="vale" name="vale" class="form-control vale" style="width: 60px" value="<?=$ultimovales['vale']?>"></td>
 
 							<td><input id="disabledTextInput" class="form-control" type="date" name="data" value="<?= date("Y-m-d") ?>"></td>
 
@@ -136,8 +146,9 @@
 						
 							 ?>
 						<tbody style="text-align: center; background-color: white; font-size: 21px;">	
-								<td><button class="btn btn-defult" data-toggle="modal" data-target="#mostrarVale"><?=$servico['idvale'] ?><span></span></button></td>
-
+							<td><a href="javascript:;" onclick="mostrar_vale('<?= $servico['idvale'] ?>')"><?php echo $servico['idvale']?></a></td>
+								<!--<td><button class="btn btn-defult" data-toggle="modal" data-target="#mostrarVale"><?//=$servico['idvale'] ?><span></span></button></td>
+-->
 								<td><input class="form-control sm" type="text" name="data" value="<?= date("d/m/Y", strtotime($servico['data']))?>">	</td>
 
 								<td> <input class="form-control" type="" name="kmaRodar" value="<?= $servico['KmaRodar']	 ?>	" disabled> </td>
@@ -162,51 +173,45 @@
 	</div>
 	</div>
 
-
+		<div class="modal fade" id="mode" role="dialog">
+				<div class="modal-dialog">
+						<div class="modal-content">
+								<div class="modal-body">...</div>
+							</div>
+					</div>
+			</div>
 				
 
 
 
-		<div id="mostrarVale" class="modal fade" role="dialog">
-			  <div class="modal-dialog">
-
-			    
+		<div id="modal-vale" class="modal fade" role="dialog">
+			  <div class="modal-dialog">			    
 			    <div class="modal-content">
-
 			      <div class="modal-header">
 			        <button type="button" class="close" data-dismiss="modal">&times;</button>
 			        <h4 class="modal-title" style="text-align: center">Vale Combustivel</h4>
 			      </div>
+			      <div class="modal-body">
+			      	
+			      </div>
 
 
-			    <div class="modal-body">  
 
-				<form action="<?php BASE_URL?>servicos/cadastroVale" method="POST">
-						 <div class="form-group">
-						 	
-						<label for="nome">Nº VALE</label>
-						<input class="form-control" type="name" name="vale" value="<?=$func['nome'] ?>"><br>
-						<label>Valor Total</label>
-						<input class="form-control" type="text" name="valor" placeholder="R$"><br>
-						<label>Total de Litros</label>
-						<input class="form-control" type="text" name="litros" placeholder="Litros"><br>
-						<hr>
-						<input class="form-control" type="date" name="data" value="<?= date("Y-m-d") ?>"><br>								
-						<input class="form-control" type="text" name="idfuncionario" value="<?= $func['id'] ?>" style="visibility: hidden;">	
-						</div>
-
-				</div>
+	
 
 					<div class="modal-footer">
-					     <button type="submit" class="btn btn-primary">Gravar</button>
+					 
 					     <button type="button" class="btn btn-danger" data-dismiss="modal">Sair</button>
 
 					</div>
 
-				</form>
+			
 			    </div>
 
 			  </div>
 			</div>
+
+
+
 
 			

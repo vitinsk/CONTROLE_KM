@@ -6,7 +6,7 @@
   font-weight: 500px;
   background-color: #2e353d;
   position: fixed;
-  top: 49px;
+  top: 0px;
   width: 150px;
   height: 100%;
   color: #e1ffff;
@@ -192,6 +192,10 @@ body {
         background-color: lightgreen;
         text-align: center;
     }
+
+
+
+
 }
 
 @media screen and (max-width: 1500px){
@@ -223,6 +227,7 @@ span.negrito {
 
 }
 
+
 @media screen and (max-width: 1500px){
   .quadro{
     width: 290px;
@@ -234,9 +239,22 @@ span.negrito {
     perspective: 10deg;
     box-shadow: 7px 7px #0000001f;
     font-size: 12px;
+
   }
+    div .midia
+     {
+      padding-left: 130px;
+    }
+
+  
+
+
+
 }
 
 .tbutao{
   font-size: 70px;
 }
+
+
+

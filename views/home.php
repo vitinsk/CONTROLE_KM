@@ -23,8 +23,10 @@ quadro 4
 quadro 5
 		</div>
 			<div class="quadro" style="">
+				
 quadro 6
 		</div>
+		
 		
 	</div>
 </div>

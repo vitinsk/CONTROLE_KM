@@ -61,6 +61,25 @@ class Servicos extends model
 
 	}
 
+	public function ultimoVale($idfuncionario,$data){
+		
+		$array = array();
+		
+		
+		
+		$sql = $this->db->query("SELECT vale FROM `tblvale` WHERE `data` = '$data' AND idfuncionario = $idfuncionario");
+		$array = $sql->fetchAll();
+		
+		
+		if ($sql->rowCount() == 0) {
+			$dado = null;
+			return $dado;			
+		}					
+		else{
+		return $array;
+		}
+	}
+
 
 
 	// public function kmaRodar($id){
