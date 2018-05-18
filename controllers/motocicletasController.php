@@ -32,6 +32,14 @@ class motocicletasController extends controller {
 				header("location: ".BASE_URL.'motocicletas');
 			}
 		}
+
+	public function excluir(){
+	$id = $_GET['id'];
+	$motocicletasObj = new motocicletas();
+	$motocicletasObj->excluir($id);
+	header("location: ".BASE_URL.'motocicletas');
+}
+
 	}
 	
 
@@ -58,6 +66,10 @@ class motocicletasController extends controller {
 
 
 // }
+
+
+
+
 
 ?>
 

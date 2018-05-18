@@ -1,6 +1,7 @@
+var url = "http://localhost";
 function mostrar_vale(id){	
 		$.ajax({
-			url:'http://localhost/CONTROLE_KM/editar_vale',
+			url:url+'/CONTROLE_KM/editar_vale',
 			type:'POST',
 			data:{id, id},
 			beforeSend:function(){

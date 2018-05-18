@@ -19,7 +19,9 @@ class servicosController extends controller
 		
 		$vale = '555';
 		$dados['vale'] = $servicosObj->getVale($vale);
-		$data = date("Y-m-d");		
+		$data = date("Y-m-d");
+		
+		//$data = "2018-04-27";		
 		$dados['ultimovale'] = $servicosObj->ultimoVale($id,$data);
 		
 

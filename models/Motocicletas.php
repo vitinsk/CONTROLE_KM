@@ -61,6 +61,14 @@
 		
 
 	}
+
+
+		public function excluir($id){
+		
+		$sql = $this->db->query("DELETE FROM tblmoto WHERE id = $id");
+		$this->db->query($sql);
+		
+	}
  } 
 
  ?>

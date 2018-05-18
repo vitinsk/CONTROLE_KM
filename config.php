@@ -1,5 +1,6 @@
 <?php 
 require 'enviroment.php';
+date_default_timezone_set("America/Sao_Paulo");
 $config = array();
 if (ENVIROMENT == 'development') {
 	define("BASE_URL", "http://localhost/CONTROLE_KM/");

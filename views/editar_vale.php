@@ -10,7 +10,7 @@ foreach ($vales as $vale) {
 						<label for="nome">Nº VALE</label>
 						<input class="form-control" type="name" name="vale" value="<?=$vale['vale'] ?>"><br>
 						<label>Valor Total</label>
-						<input class="form-control" type="text" name="valor" value="<?=$vale['valor'] ?>"><br>
+						<input class="form-control" type="text" name="valor" value="R$ <?=$vale['valor'] ?>"><br>
 						<label>Total de Litros</label>
 						<input class="form-control" type="text" name="litros" value="<?=$vale['litros'] ?>"><br>
 						<hr>

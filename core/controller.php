@@ -8,8 +8,7 @@ class controller{
 
 	public function loadTemplate($viewName, $viewData = array()){
 		$funcionarioObj = new Funcionarios();
-		$array = $funcionarioObj->mostrarFuncionario();
-		//var_dump($array['nome']);
+		$array = $funcionarioObj->mostrarFuncionario();		
 		require 'views/template.php';
 	}
 

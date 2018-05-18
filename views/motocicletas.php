@@ -88,7 +88,7 @@
 										<td></td>
 										<td>".$moto['km_x_litro']."</td>
 										<td> <button class='btn btn-default' style='width: 90%' id=".$moto['id']."type='submit'>Alterar</button> </td>
-										<td> <button class='btn btn-danger' style='width: 90%' id=".$moto['id']."type='submit'>Excluir</button> </td>
+										<td> <a><button class='btn btn-danger' style='width: 90%' id=".$moto['id']."type='submit'>Excluir</button></a> </td>
 
 									
 							</tr>";

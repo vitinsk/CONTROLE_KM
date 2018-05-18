@@ -5,8 +5,9 @@
     <script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/jquery.min.js"></script>
   	<link rel="stylesheet" type="text/css" href="<?php BASE_URL?>assets/css/estilo.css">
   	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>/assets/css/bootstrap.min.css">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  
           <script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/scripts.js"></script> 
+              <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
 
 
