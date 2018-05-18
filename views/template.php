@@ -40,7 +40,7 @@
                   </li>
                   <ul class="sub-menu collapse" id="cadastro">
                       <li><a href="<?php echo BASE_URL; ?>funcionarios">Funcionarios</a></li>
-                      <li><a href="<?php echo BASE_URL; ?>motocicletas">Motocicletas</a></li>
+                      <li><a href="<?php echo BASE_URL; ?>motocicletas">Veiculos</a></li>
                      
 
                   </ul>
